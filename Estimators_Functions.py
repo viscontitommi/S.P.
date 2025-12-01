@@ -104,6 +104,7 @@ def plot_consistency_check(mu, sigma, S0, noise_std, n_paths=1000):
     plt.figure(figsize=(10, 6))
     plt.plot(n_steps_list, rv_means, 'r-o', label='Realized Volatility (RV)', linewidth=1)
     plt.plot(n_steps_list, tsrv_means, 'g-s', label='Two-Scales RV (TSRV)', linewidth=1)
+    plt.axhline(y=target_iv, color='blue', linestyle='--', label='True IV')
     plt.title(f"Volatility Signature Plot\n(Noise={noise_std})")
     plt.xlabel("Sampling Frequency (N steps/day)")
     plt.ylabel("Estimated Volatility")
